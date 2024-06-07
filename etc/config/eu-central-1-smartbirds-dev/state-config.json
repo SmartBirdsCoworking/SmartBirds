@@ -1,0 +1,12 @@
+{
+  "provider": "aws",
+  "state": {
+    "bucket": "smartbirds-platform-states",
+    "region": "eu-central-1",
+    "prefix": "smartbirds-dev",
+    "tags": {
+      "Environment": "dev",
+      "Product": "smartbirds"
+    }
+  }
+}

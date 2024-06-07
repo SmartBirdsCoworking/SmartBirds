@@ -1,0 +1,64 @@
+{
+    "projectTasks": [
+        {
+            "id": 1,
+            "name": "Design a directory structure",
+            "status": "todo",
+            "description": "Design a directory structure for the project to segregate Terraform code, Lambda functions, and documentation."
+        },
+        {
+            "id": 2,
+            "name": "Create documentation guidelines",
+            "status": "todo",
+            "description": "Create documentation guidelines for all components of the project."
+        },
+        {
+            "id": 3,
+            "name": "Plan CI/CD pipelines",
+            "status": "todo",
+            "description": "Plan the implementation of CI/CD pipelines for automated testing, building, and deployment."
+        },
+        {
+            "id": 4,
+            "name": "Integrate code quality tools",
+            "status": "todo",
+            "description": "Integrate code quality tools for linting, formatting, and static analysis."
+        },
+        {
+            "id": 5,
+            "name": "Develop version control strategy",
+            "status": "todo",
+            "description": "Develop a version control strategy that accommodates the monorepo structure."
+        },
+        {
+            "id": 6,
+            "name": "Develop code for DynamoDB deployment",
+            "status": "todo",
+            "description": "Develop Terraform code for deploying a DynamoDB table."
+        },
+        {
+            "id": 6,
+            "name": "Develop code for Network deployment",
+            "status": "todo",
+            "description": "Develop Terraform code for deploying a Network (VPC, Subnets, Security Groups, etc)."
+        },
+        {
+            "id": 7,
+            "name": "Develop code for Lambda deployment",
+            "status": "todo",
+            "description": "Develop Terraform code for deploying a Lambda functions."
+        },
+        {
+            "id": 8,
+            "name": "Develop code for mini-app deployment",
+            "status": "todo",
+            "description": "Develop Terraform code for deploying a mini-app."
+        }
+    ],
+    "code": {
+        "path": "https://chainreact-g-xfab5qrx5.s3.us-east-2.amazonaws.com/code/"
+    },
+    "lastUpdated": "2024-06-06-15:50:00",
+    "totalTasks": 8,
+    "completedTasks": 0
+}
