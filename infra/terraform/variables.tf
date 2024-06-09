@@ -2,37 +2,47 @@ variable "region" {
   default = ""
 }
 
+variable "name" {
+  description = "Name of the project"
+  type        = string
+}
+
 variable "vpc_cidr_block" {
   description = "CIDR block for the VPC"
   type        = string
 }
 
-variable "vpc_name" {
-  description = "Name of the VPC"
+variable "telegram_bot_token" {
+  description = "The Telegram bot token"
   type        = string
 }
 
-variable "public_subnets_count" {
-  description = "Number of public subnets"
-  type        = number
+variable "docker_image" {
+  description = "The Docker image for the mini-app"
+  type        = string
+  default = ""
 }
 
-variable "public_subnets_cidrs" {
-  description = "CIDR blocks for public subnets"
+variable "database_url" {
+  description = "The URL for the database"
+  type        = string
+  default = ""
+}
+
+variable "subnets" {
+  description = "List of subnets for the ECS service"
   type        = list(string)
+  default = []
 }
 
-variable "dynamodb_table_name" {
-  description = "Name of the DynamoDB table"
-  type        = string
+variable "security_groups" {
+  description = "List of security groups for the ECS service"
+  type        = list(string)
+  default = []
 }
 
-variable "dynamodb_hash_key" {
-  description = "Hash key for the DynamoDB table"
-  type        = string
-}
-
-variable "dynamodb_hash_key_type" {
-  description = "Type of the hash key"
-  type        = string
+variable "availability_zones" {
+  description = "List of availability zones"
+  type        = list(string)
+  default     = ["eu-central-1a"]
 }

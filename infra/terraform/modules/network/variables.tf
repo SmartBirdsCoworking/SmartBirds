@@ -3,17 +3,18 @@ variable "cidr_block" {
   type        = string
 }
 
-variable "vpc_name" {
-  description = "Name of the VPC"
+variable "availability_zones" {
+  description = "List of availability zones"
+  type        = list(string)
+}
+
+variable "name" {
+  description = "Name for the network resources"
   type        = string
 }
 
-variable "public_subnets_count" {
-  description = "Number of public subnets"
-  type        = number
-}
-
-variable "public_subnets_cidrs" {
-  description = "CIDR blocks for public subnets"
-  type        = list(string)
+variable "create_nat_gateway" {
+  description = "Create a NAT Gateway for the private subnets"
+  type        = bool
+  default     = true
 }

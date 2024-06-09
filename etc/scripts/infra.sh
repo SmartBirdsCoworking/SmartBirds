@@ -71,6 +71,7 @@ function plan_infra_provision () {
     terraform plan \
       -input=false \
       -var=region=${PRODUCT_CONFIG_REGION} \
+      -var=telegram_bot_token=${TG_TOKEN} \
       -var-file=${CONFIG_FILE} \
       -out tfplan
 }
@@ -87,6 +88,7 @@ function create_infra () {
       -input=false \
       -auto-approve \
       -var=region=${PRODUCT_CONFIG_REGION} \
+      -var=telegram_bot_token=${TG_TOKEN} \
       -var-file=${CONFIG_FILE}
 }
 
@@ -99,6 +101,7 @@ function refresh_infra () {
     terraform refresh \
       -input=false \
       -var=region=${PRODUCT_CONFIG_REGION} \
+      -var=telegram_bot_token=${TG_TOKEN} \
       -var-file=${CONFIG_FILE}
 }
 
@@ -114,5 +117,6 @@ function destroy_infra () {
       -input=false \
       -auto-approve \
       -var=region=${PRODUCT_CONFIG_REGION} \
+      -var=telegram_bot_token=${TG_TOKEN} \
       -var-file=${CONFIG_FILE}
 }

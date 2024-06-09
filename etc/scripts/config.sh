@@ -3,7 +3,7 @@
 #
 
 # load local environment
-#source ./.dev-env 2>/dev/null
+source ./.dev-env 2>/dev/null
 
 # default parameters
 PRODUCT_S3_BUCKET=${PRODUCT_S3_BUCKET:-"smartbirds"}

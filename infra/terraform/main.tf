@@ -7,18 +7,11 @@ provider "aws" {
 }
 
 
-module "vpc" {
+module "network" {
   source = "./modules/network"
-
   cidr_block           = var.vpc_cidr_block
-  vpc_name             = var.vpc_name
-  public_subnets_count = var.public_subnets_count
-  public_subnets_cidrs = var.public_subnets_cidrs
+  name                 = var.name
+  availability_zones   = var.availability_zones
+  create_nat_gateway   = false
 }
 
-module "dynamodb" {
-  source       = "./modules/dynamodb"
-  table_name   = var.dynamodb_table_name
-  hash_key     = var.dynamodb_hash_key
-  hash_key_type = var.dynamodb_hash_key_type
-}
