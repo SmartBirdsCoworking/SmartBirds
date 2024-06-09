@@ -29,3 +29,9 @@ variable "environment_variables" {
   type        = map(string)
   default     = {}
 }
+
+variable "assign_public_ip" {
+    description = "Whether to assign a public IP to the ECS service"
+    type        = bool
+    default     = false
+}

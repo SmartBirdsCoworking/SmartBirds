@@ -2,6 +2,11 @@ provider "aws" {
   region = var.region
 }
 
+resource "aws_cloudwatch_log_group" "ecs_logs" {
+  name = "/ecs/${var.name}"
+  retention_in_days = 1 # Optional: Configure log retention policy
+}
+
 resource "aws_ecs_cluster" "ecs_cluster" {
   name = var.name
 }
@@ -14,6 +19,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
   memory                   = "512"
 
   execution_role_arn = aws_iam_role.ecs_execution_role.arn
+
 
   container_definitions = jsonencode([
     {
@@ -32,6 +38,14 @@ resource "aws_ecs_task_definition" "ecs_task" {
           value = v
         }
       ]
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
+          awslogs-region        = var.region
+          awslogs-stream-prefix = "ecs"
+        }
+      }
     }
   ])
 }
@@ -43,8 +57,9 @@ resource "aws_ecs_service" "ecs_service" {
   desired_count   = 1
 
   network_configuration {
-    subnets         = var.subnets
-    security_groups = var.security_groups
+    subnets          = var.subnets
+    security_groups  = var.security_groups
+    assign_public_ip = var.assign_public_ip
   }
 
   launch_type = "FARGATE"

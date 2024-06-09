@@ -46,3 +46,9 @@ variable "availability_zones" {
   type        = list(string)
   default     = ["eu-central-1a"]
 }
+
+variable "create_nat_gateway" {
+    description = "Create a NAT gateway for the private subnets"
+    type        = bool
+    default     = false
+}

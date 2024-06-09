@@ -43,7 +43,8 @@ module "telegram_bot" {
   name              = var.name
   region            = var.region
   docker_image      = var.docker_image
-  subnets           = module.network.public_subnets
+  subnets           = var.create_nat_gateway ? module.network.private_subnets : module.network.public_subnets
+  assign_public_ip  = var.create_nat_gateway ? false : true
   security_groups   = [aws_security_group.ecs_service.id]
 
   environment_variables       = {
