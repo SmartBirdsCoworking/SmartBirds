@@ -36,6 +36,14 @@ terraform.rc
 # Ignore credentials file
 .dev-env
 
+#
+*.lock.hcl
+*.tfplan
+infra/terraform/tfplan
+infra/terraform/.terraform.lock.hcl
+
+
 # Python
 *.pyc
 __pycache__/
+
