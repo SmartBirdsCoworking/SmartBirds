@@ -47,3 +47,8 @@ infra/terraform/.terraform.lock.hcl
 *.pyc
 __pycache__/
 
+# TypeScript
+*.tsbuildinfo
+node_modules/
+
+infra/dynamodb_local

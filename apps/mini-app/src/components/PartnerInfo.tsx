@@ -1,31 +1,51 @@
-import React from 'react';
-import { Blockquote  } from '@xelene/tgui';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import AWS from 'aws-sdk';
+import { config } from '../config';
 
+const dynamodb = new AWS.DynamoDB.DocumentClient({
+  region: config.region,
+  endpoint: config.endpoint,
+});
 
-export const NewPage = () => {
-    return (
-       <>
-           <div style={{ display: 'flex', justifyContent: 'center' }}>
-               <h1 >
-                    Parner Name
-               </h1>
-           </div>
-           <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <img
-                    src="https://static.tildacdn.one/tild6361-3139-4330-b064-393537376230/SB-Brandmark-Black_2.png"
-                    alt="Logo"
-                    style={{
-                        width: '300px',
-                        height: '300px',
-                        alignSelf: 'center',
-                    }}
-                    />
-           </div>
-           <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Blockquote type="text">
-                        There is grandeur in this view of life, with its several powers, having been originally breathed by the Creator into a few forms or into one; and that, whilst this planet has gone circling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being evolved.
-                    </Blockquote>
-           </div>
-        </>
-    );
+interface Partner {
+  id: string;
+  name: string;
+  description: string;
+  address: string;
+}
+
+export const PartnerInfo: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const [partner, setPartner] = useState<Partner | null>(null);
+
+  useEffect(() => {
+    const fetchPartner = async () => {
+      const params = {
+        TableName: 'partners',
+        Key: { id },
+      };
+
+      try {
+        const data = await dynamodb.get(params).promise();
+        setPartner(data.Item as Partner);
+      } catch (error) {
+        console.error('Error fetching partner:', error);
+      }
+    };
+
+    fetchPartner();
+  }, [id]);
+
+  if (!partner) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>{partner.name}</h1>
+      <p>{partner.description}</p>
+      <p>{partner.address}</p>
+    </div>
+  );
 };
