@@ -19,7 +19,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
   memory                   = "512"
 
   execution_role_arn = aws_iam_role.ecs_execution_role.arn
-
+  task_role_arn =  aws_iam_role.ecs_execution_role.arn
 
   container_definitions = jsonencode([
     {
@@ -81,6 +81,19 @@ resource "aws_iam_role" "ecs_execution_role" {
       },
     ]
   })
+
+  managed_policy_arns = [
+    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess",
+    "arn:aws:iam::aws:policy/AmazonECS_FullAccess",
+    "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
+  ]
+
+}
+
+resource "aws_iam_role_policy_attachment" "secrets_manager_access" {
+  role       = aws_iam_role.ecs_execution_role.name
+  policy_arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
 }
 
 resource "aws_iam_role_policy_attachment" "ecs_execution_role_policy_attachment" {

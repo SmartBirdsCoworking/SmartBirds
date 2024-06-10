@@ -6,6 +6,7 @@ provider "aws" {
   region = var.region
 }
 
+provider "random" {}
 
 module "network" {
   source = "./modules/network"

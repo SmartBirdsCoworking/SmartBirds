@@ -14,13 +14,6 @@ module "users_table" {
   hash_key_type = "S"
 }
 
-module "secret" {
-  source = "./modules/secret"
-
-  secret_name      = "telegram-bot-token"
-  telegram_bot_token = var.telegram_bot_token
-}
-
 resource "aws_security_group" "ecs_service" {
   name = "${var.name}-ecs-sg"
   vpc_id = module.network.vpc_id
@@ -37,6 +30,13 @@ resource "aws_security_group" "ecs_service" {
   }
 }
 
+module "secret" {
+  source = "./modules/secret"
+
+  secret_name      = "telegram-bot-token"
+  telegram_bot_token = var.telegram_bot_token
+}
+
 module "telegram_bot" {
   source = "./modules/ecs"
 
@@ -49,7 +49,8 @@ module "telegram_bot" {
 
   environment_variables       = {
     TABLE_NAME = local.table_name
-    SECRET_ARN = module.secret.secret_arn
-    REGION     = var.region
+#    SECRET_ARN = module.secret.secret_arn
+    AWS_REGION     = var.region
+    TELEGRAM_BOT_TOKEN = var.telegram_bot_token
   }
 }
