@@ -1,69 +1,54 @@
-provider "aws" {
-  region = var.region
+resource "aws_ecr_repository" "ecr_repo" {
+  for_each = toset(var.ecr_repos)
+  name                 = each.key
+  image_tag_mutability = "MUTABLE"
+
+  # Optional: Enable image scanning on push to detect vulnerabilities
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+
+  force_delete = true
+}
+
+data "aws_iam_policy_document" "ecr_repo" {
+    statement {
+    sid    = "ecr_repo policy"
+    effect = "Allow"
+
+    principals {
+      type        = "AWS"
+      identifiers = ["809375318950"]
+    }
+
+    actions = [
+      "ecr:GetDownloadUrlForLayer",
+      "ecr:BatchGetImage",
+      "ecr:BatchCheckLayerAvailability",
+      "ecr:PutImage",
+      "ecr:InitiateLayerUpload",
+      "ecr:UploadLayerPart",
+      "ecr:CompleteLayerUpload",
+      "ecr:DescribeRepositories",
+      "ecr:GetRepositoryPolicy",
+      "ecr:ListImages",
+      "ecr:DeleteRepository",
+      "ecr:BatchDeleteImage",
+      "ecr:SetRepositoryPolicy",
+      "ecr:DeleteRepositoryPolicy",
+    ]
+  }
+}
+
+resource "aws_ecr_repository_policy" "ecr_repo" {
+  for_each = toset(var.ecr_repos)
+  repository = aws_ecr_repository.ecr_repo[each.key].name
+  policy     = data.aws_iam_policy_document.ecr_repo.json
 }
 
 resource "aws_cloudwatch_log_group" "ecs_logs" {
   name = "/ecs/${var.name}"
   retention_in_days = 1 # Optional: Configure log retention policy
-}
-
-resource "aws_ecs_cluster" "ecs_cluster" {
-  name = var.name
-}
-
-resource "aws_ecs_task_definition" "ecs_task" {
-  family                   = "${var.name}-task"
-  network_mode             = "awsvpc"
-  requires_compatibilities = ["FARGATE"]
-  cpu                      = "256"
-  memory                   = "512"
-
-  execution_role_arn = aws_iam_role.ecs_execution_role.arn
-  task_role_arn =  aws_iam_role.ecs_execution_role.arn
-
-  container_definitions = jsonencode([
-    {
-      name      = "${var.name}-container"
-      image     = var.docker_image
-      essential = true
-      portMappings = [
-        {
-          containerPort = 80
-          hostPort      = 80
-        }
-      ]
-      environment = [
-        for k, v in var.environment_variables : {
-          name  = k
-          value = v
-        }
-      ]
-      logConfiguration = {
-        logDriver = "awslogs"
-        options = {
-          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
-          awslogs-region        = var.region
-          awslogs-stream-prefix = "ecs"
-        }
-      }
-    }
-  ])
-}
-
-resource "aws_ecs_service" "ecs_service" {
-  name            = var.name
-  cluster         = aws_ecs_cluster.ecs_cluster.id
-  task_definition = aws_ecs_task_definition.ecs_task.arn
-  desired_count   = 1
-
-  network_configuration {
-    subnets          = var.subnets
-    security_groups  = var.security_groups
-    assign_public_ip = var.assign_public_ip
-  }
-
-  launch_type = "FARGATE"
-
 }
 
 resource "aws_iam_role" "ecs_execution_role" {
@@ -99,4 +84,8 @@ resource "aws_iam_role_policy_attachment" "secrets_manager_access" {
 resource "aws_iam_role_policy_attachment" "ecs_execution_role_policy_attachment" {
   role       = aws_iam_role.ecs_execution_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+}
+
+resource "aws_ecs_cluster" "ecs_cluster" {
+  name = var.name
 }

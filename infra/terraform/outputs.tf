@@ -12,10 +12,6 @@ output "telegram_bot_secret_arn" {
   value       = module.secret.secret_arn
 }
 
-output "telegram_bot_ecs_cluster_id" {
-  description = "The ID of the ECS cluster"
-  value       = module.telegram_bot.ecs_cluster_id
-}
 
 output "telegram_bot_ecs_service_name" {
   description = "The name of the ECS service"

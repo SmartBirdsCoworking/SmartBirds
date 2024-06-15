@@ -2,6 +2,8 @@
 set -eo pipefail
 
 function set_infra_config () {
+  export AWS_PROFILE="smartbirds"
+
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
   # terraform data directory:

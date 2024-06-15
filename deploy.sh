@@ -3,6 +3,8 @@ set -eo pipefail
 #set -x
 
 export AWS_PAGER=""
+# set aws profile "smartbirds"
+export AWS_PROFILE="smartbirds"
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${SCRIPT_DIR}/etc/scripts/config.sh

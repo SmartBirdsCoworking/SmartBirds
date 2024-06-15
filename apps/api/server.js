@@ -5,11 +5,16 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 // Настройка AWS SDK для локального использования
+const region = process.env.AWS_REGION || 'eu-central-1';
+const endpoint = process.env.DYNAMODB_ENDPOINT || 'http://localhost:8000';
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID || 'fakeAccessKeyId';
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY || 'fakeSecretAccessKey';
+
 AWS.config.update({
-  region: 'eu-central-1',
-  endpoint: 'http://localhost:8000',
-  accessKeyId: 'fakeAccessKeyId',
-  secretAccessKey: 'fakeSecretAccessKey',
+  region,
+  endpoint,
+  accessKeyId,
+  secretAccessKey,
 });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
@@ -30,6 +35,29 @@ app.use(
     },
   })
 );
+
+// Маршрут для проверки работоспособности сервера
+app.get('/api/health', (req, res) => {
+  res.json({ message: 'Server is running' });
+});
+
+// Маршрут для получения списка партнеров
+app.get('/api/partners', async (req, res) => {
+  const params = {
+    TableName: 'partners',
+  };
+
+  console.log('Received request to get partners:', params);
+
+  try {
+    const data = await dynamodb.scan(params).promise();
+    console.log('Successfully got partners:', data);
+    res.json(data.Items);
+  } catch (error) {
+    console.error('Error getting partners:', error);
+    res.status(500).json({ error: 'Error getting partners', details: error.message });
+  }
+});
 
 // Маршрут для регистрации партнера
 app.post('/api/register', async (req, res) => {

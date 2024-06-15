@@ -17,8 +17,20 @@ variable "telegram_bot_token" {
   type        = string
 }
 
-variable "docker_image" {
-  description = "The Docker image for the mini-app"
+variable "telegram_bot_image" {
+  description = "The Docker image for the telegram_bot"
+  type        = string
+  default = ""
+}
+
+variable "api_image" {
+  description = "The Docker image for the API"
+  type        = string
+  default = ""
+}
+
+variable "miniapp_image" {
+  description = "The Docker image for the API"
   type        = string
   default = ""
 }
