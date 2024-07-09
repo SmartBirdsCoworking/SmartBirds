@@ -59,6 +59,23 @@ app.get('/api/partners', async (req, res) => {
     res.status(500).json({ error: 'Error getting partners', details: error.message });
   }
 });
+app.get('/partners', async (req, res) => {
+  const params = {
+    TableName: 'partners',
+  };
+
+  console.log('Received request to get partners:', params);
+
+  try {
+    const data = await dynamodb.scan(params).promise();
+    console.log('Successfully got partners:', data);
+    res.json(data.Items);
+  } catch (error) {
+    console.error('Error getting partners:', error);
+    res.status(500).json({ error: 'Error getting partners', details: error.message });
+  }
+});
+
 
 // Маршрут для регистрации партнера
 app.post('/api/register', async (req, res) => {
@@ -83,8 +100,31 @@ app.post('/api/register', async (req, res) => {
     res.status(500).json({ error: 'Error registering partner', details: error.message });
   }
 });
+app.post('/register', async (req, res) => {
+  const { partnerId, name, description } = req.body;
+  const params = {
+    TableName: 'partners',
+    Item: {
+      id: partnerId,
+      name,
+      description,
+    },
+  };
 
-const qrcode = require('qrcode');
+  console.log('Received request to register partner:', params);
+
+  try {
+    const data = await dynamodb.put(params).promise();
+    console.log('Successfully registered partner:', data);
+    res.status(201).json({ message: 'Partner registered successfully' });
+  } catch (error) {
+    console.error('Error registering partner:', error);
+    res.status(500).json({ error: 'Error registering partner', details: error.message });
+  }
+});
+
+
+//const qrcode = require('qrcode');
 
 // Маршрут для генерации QR-кода
 app.post('/api/generate-qr', async (req, res) => {

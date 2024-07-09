@@ -6,8 +6,8 @@ resource "aws_ecs_task_definition" "ecs_task" {
   family                   = "${var.name}-${var.task_name}"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "256"
-  memory                   = "512"
+  cpu                      = var.cpu
+  memory                   = var.memory
 
   execution_role_arn = var.ecs_execution_role
   task_role_arn =  var.ecs_execution_role

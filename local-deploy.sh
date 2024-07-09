@@ -48,7 +48,7 @@ start_backend() {
         echo "Backend service is already running."
     else
         echo "Starting backend service..."
-        cd apps/backend || exit
+        cd apps/api || exit
         npm run dev &
         cd -
         echo "Backend service started."

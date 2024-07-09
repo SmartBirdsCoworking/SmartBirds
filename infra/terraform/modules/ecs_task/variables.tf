@@ -62,3 +62,15 @@ variable "port" {
     type        = number
     default     = 80
 }
+
+variable "cpu" {
+    description = "The amount of CPU to allocate to the ECS task"
+    type        = string
+    default     = "256"
+}
+
+variable "memory" {
+    description = "The amount of memory to allocate to the ECS task"
+    type        = string
+    default     = "512"
+}

@@ -56,7 +56,7 @@ variable "security_groups" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default     = ["eu-central-1a"]
+  default     = ["eu-central-1a", "eu-central-1b"]
 }
 
 variable "create_nat_gateway" {
