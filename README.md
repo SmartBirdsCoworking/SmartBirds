@@ -1,5 +1,7 @@
 # SmartBirds
 
+<image width=600 src="/Screenshot 2024-07-09 at 13.44.39.png" alt="Image description">
+
 
 ## Project Structure
 
