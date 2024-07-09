@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import '@xelene/tgui/dist/styles.css';
 import './index.css';
-import { App } from './App'; // Убедитесь, что App импортируется правильно
-import { config } from './config';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
+import { setBackgroundAsSecondary } from './helpers/setBackgroundAsSecondary';
+
+setBackgroundAsSecondary();
+
+const root = createRoot(
+  document.getElementById('root') as HTMLElement
 );
+
+root.render(<App />);
