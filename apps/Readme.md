@@ -12,7 +12,7 @@ This folder contains the front-end applications.
 
 
 ## Deployment
-Both applications can be deployed using AWS Amplify for seamless CI/CD and hosting.
+~~Both applications can be deployed using AWS Amplify for seamless CI/CD and hosting.~~
 
 
 ## Notes
