@@ -1,4 +1,6 @@
-# SmartBirds
+# SmartBirds Loyalty Program
+
+SmartBirds is a coalition loyalty program offering discounts at various partner establishments through a Telegram mini-app. Users register, generate QR codes, and track discounts via a React-based mini-app. The backend API is built with Node.js and integrated with AWS DynamoDB for data storage. Partners can register, manage info and conditions, view statistics. The infrastructure is managed using Terraform for modular AWS deployment. This project combines seamless Telegram integration, cloud-based data management, and user-friendly interfaces to enhance customer loyalty and engagement.
 
 <image width=600 src="/Screenshot 2024-07-09 at 13.44.39.png" alt="Image description">
 

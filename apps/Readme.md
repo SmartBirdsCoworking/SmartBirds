@@ -1,9 +1,10 @@
 # User Interface Applications
 
 ## Overview
-This folder contains the frontend applications.
+This folder contains the front-end applications.
 
 ## Structure
+- `api`: An API that communicates with DynamoDB
 - `mini-app/`: A mini-app telegram application for users to observe discount oportunities and generate QR-codes.
 - `mobile-app/`: A mobile app offering similar functionalities as the web dashboard for on-the-go access.
 
@@ -11,7 +12,7 @@ This folder contains the frontend applications.
 
 
 ## Deployment
-Both applications can be deployed using AWS Amplify for seamless CI/CD and hosting.
+~~Both applications can be deployed using AWS Amplify for seamless CI/CD and hosting.~~
 
 
 ## Notes
