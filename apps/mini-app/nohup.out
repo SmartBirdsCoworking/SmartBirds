@@ -123,3 +123,2676 @@ webpack compiled successfully
 Files successfully emitted, waiting for typecheck results...
 Issues checking in progress...
 No issues found.
+
+> tgui-example@1.0.0 start
+> PORT=3001 react-scripts start
+
+(node:29816) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:29816) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+Failed to compile.
+
+Attempted import error: 'GenerateQRCode' is not exported from './components/GenerateQRCode' (imported as 'GenerateQRCode').
+ERROR in ./src/App.tsx 74:36-50
+export 'GenerateQRCode' (imported as 'GenerateQRCode') was not found in './components/GenerateQRCode' (possible exports: default)
+
+ERROR in ./src/components/GenerateQRCode.js 7:0-26
+Module not found: Error: Can't resolve 'axios' in '/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components'
+
+webpack compiled with 2 errors
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/App.tsx:10:10
+TS2614: Module '"./components/GenerateQRCode"' has no exported member 'GenerateQRCode'. Did you mean to use 'import GenerateQRCode from "./components/GenerateQRCode"' instead?
+     8 | import { EditPartner } from './components/EditPartner';
+     9 | import { PartnerStats } from './components/PartnerStats';
+  > 10 | import { GenerateQRCode } from './components/GenerateQRCode';
+       |          ^^^^^^^^^^^^^^
+    11 |
+    12 |
+    13 | export const App = () => (
+
+ERROR in src/App.tsx:21:70
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                      ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:89
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                         ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+Failed to compile.
+
+Attempted import error: 'GenerateQRCode' is not exported from './components/GenerateQRCode' (imported as 'GenerateQRCode').
+ERROR in ./src/App.tsx 74:36-50
+export 'GenerateQRCode' (imported as 'GenerateQRCode') was not found in './components/GenerateQRCode' (possible exports: default)
+
+ERROR in ./src/components/GenerateQRCode.tsx 7:0-26
+Module not found: Error: Can't resolve 'axios' in '/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components'
+
+webpack compiled with 2 errors
+ERROR in src/App.tsx:10:10
+TS2614: Module '"./components/GenerateQRCode"' has no exported member 'GenerateQRCode'. Did you mean to use 'import GenerateQRCode from "./components/GenerateQRCode"' instead?
+     8 | import { EditPartner } from './components/EditPartner';
+     9 | import { PartnerStats } from './components/PartnerStats';
+  > 10 | import { GenerateQRCode } from './components/GenerateQRCode';
+       |          ^^^^^^^^^^^^^^
+    11 |
+    12 |
+    13 | export const App = () => (
+
+ERROR in src/App.tsx:21:70
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                      ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:89
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                         ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiling...
+Failed to compile.
+
+Attempted import error: 'GenerateQRCode' is not exported from './components/GenerateQRCode' (imported as 'GenerateQRCode').
+ERROR in ./src/App.tsx 74:36-50
+export 'GenerateQRCode' (imported as 'GenerateQRCode') was not found in './components/GenerateQRCode' (possible exports: default)
+
+ERROR in ./src/components/GenerateQRCode.tsx 7:0-26
+Module not found: Error: Can't resolve 'axios' in '/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components'
+
+webpack compiled with 2 errors
+ERROR in src/App.tsx:10:10
+TS2614: Module '"./components/GenerateQRCode"' has no exported member 'GenerateQRCode'. Did you mean to use 'import GenerateQRCode from "./components/GenerateQRCode"' instead?
+     8 | import { EditPartner } from './components/EditPartner';
+     9 | import { PartnerStats } from './components/PartnerStats';
+  > 10 | import { GenerateQRCode } from './components/GenerateQRCode';
+       |          ^^^^^^^^^^^^^^
+    11 |
+    12 |
+    13 | export const App = () => (
+
+ERROR in src/App.tsx:21:70
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                      ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:89
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                         ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.tsx
+  Line 21:47:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/App.tsx
+  Line 21:47:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+ERROR in src/App.tsx:21:47
+TS2304: Cannot find name 'GenerateQRCode'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                               ^^^^^^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:70
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                      ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:89
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 |       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                         ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.tsx
+  Line 21:50:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/App.tsx
+  Line 20:69:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+ERROR in [eslint] 
+src/App.tsx
+  Line 21:50:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+ERROR in src/App.tsx:21:50
+TS2304: Cannot find name 'GenerateQRCode'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | //       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                  ^^^^^^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:73
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | //       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                         ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:92
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | //       <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                            ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.tsx
+  Line 21:48:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/App.tsx
+  Line 21:48:  'GenerateQRCode' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+ERROR in src/App.tsx:21:48
+TS2304: Cannot find name 'GenerateQRCode'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | #      <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                ^^^^^^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:71
+TS2304: Cannot find name 'userId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | #      <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                       ^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/App.tsx:21:90
+TS2304: Cannot find name 'partnerId'.
+    19 |       <Route path="/partner/edit/:id" element={<EditPartner />} />
+    20 |       <Route path="/partner/stats/:id" element={<PartnerStats />} />
+  > 21 | #      <Route path="/partner/qrcode" element={<GenerateQRCode userId={userId} partnerId={partnerId}/>} />
+       |                                                                                          ^^^^^^^^^
+    22 |     </Routes>
+    23 |   </Router>
+    24 | );
+
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/GenerateQRCode.tsx:3:19
+TS2307: Cannot find module 'axios' or its corresponding type declarations.
+    1 | // src/components/GenerateQRCode.js
+    2 | import React, { useState } from 'react';
+  > 3 | import axios from 'axios';
+      |                   ^^^^^^^
+    4 |
+    5 | const GenerateQRCode = ({ userId, partnerId }) => {
+    6 |   const [qrCode, setQrCode] = useState('');
+
+ERROR in src/components/GenerateQRCode.tsx:5:27
+TS7031: Binding element 'userId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                           ^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+ERROR in src/components/GenerateQRCode.tsx:5:35
+TS7031: Binding element 'partnerId' implicitly has an 'any' type.
+    3 | import axios from 'axios';
+    4 |
+  > 5 | const GenerateQRCode = ({ userId, partnerId }) => {
+      |                                   ^^^^^^^^^
+    6 |   const [qrCode, setQrCode] = useState('');
+    7 |
+    8 |   const generateQRCode = async () => {
+
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/Partners.tsx
+TS1208: 'Partners.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/Partners.tsx
+TS1005: '}' expected.
+
+ERROR in src/components/Partners.tsx:5:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+    3 |
+    4 |
+  > 5 | export const Partners: React.FC = () => {
+      |              ^^^^^^^^
+    6 |   const navigate = useNavigate();
+    7 |
+    8 |   const fetchPartners = async () => {
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const Partners: React.FC = () => {
+       |              ^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:7
+TS1005: ',' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:7
+TS2554: Expected 1-2 arguments, but got 3.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2448: Block-scoped variable 'response' used before its declaration.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2454: Variable 'response' is used before being assigned.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:47
+TS1005: ')' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                                               ^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ',' expected (21:6)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (21:6)
+
+  19 |               headers: {}
+  20 |           }
+> 21 |       setPartners(response.Items as Partner[]);
+     |       ^
+  22 |       } catch (error) {
+  23 |         console.error('Error fetching partners:', error);
+  24 |       }
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseAwait (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11794:28)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10520:25)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 21:6:  Parsing error: ',' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:7
+TS1005: ',' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:7
+TS2554: Expected 1-2 arguments, but got 3.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2448: Block-scoped variable 'response' used before its declaration.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2454: Variable 'response' is used before being assigned.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:47
+TS1005: ')' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                                               ^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ')' expected (21:46)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (21:46)
+
+  19 |               headers: {}
+  20 |           },
+> 21 |       setPartners(response.Items as Partner[]);
+     |                                               ^
+  22 |       } catch (error) {
+  23 |         console.error('Error fetching partners:', error);
+  24 |       }
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseAwait (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11794:28)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10520:25)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 21:46:  Parsing error: ')' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:7
+TS2554: Expected 1-2 arguments, but got 3.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2448: Block-scoped variable 'response' used before its declaration.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2454: Variable 'response' is used before being assigned.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:47
+TS1005: ')' expected.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                                               ^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ',' expected (21:6)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (21:6)
+
+  19 |               headers: {}
+  20 |           }
+> 21 |       setPartners(response.Items as Partner[]);
+     |       ^
+  22 |       } catch (error) {
+  23 |         console.error('Error fetching partners:', error);
+  24 |       }
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseAwait (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11794:28)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10520:25)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 21:6:  Parsing error: ',' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:7
+TS1005: ',' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:7
+TS2554: Expected 1-2 arguments, but got 3.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2448: Block-scoped variable 'response' used before its declaration.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2454: Variable 'response' is used before being assigned.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:47
+TS1005: ')' expected.
+    19 |               headers: {}
+    20 |           }
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                                               ^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ')' expected (21:46)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (21:46)
+
+  19 |               headers: {}
+  20 |           },
+> 21 |       setPartners(response.Items as Partner[]);
+     |                                               ^
+  22 |       } catch (error) {
+  23 |         console.error('Error fetching partners:', error);
+  24 |       }
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseAwait (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11794:28)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10520:25)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 21:46:  Parsing error: ')' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:7
+TS2554: Expected 1-2 arguments, but got 3.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2448: Block-scoped variable 'response' used before its declaration.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:19
+TS2454: Variable 'response' is used before being assigned.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                   ^^^^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:21:47
+TS1005: ')' expected.
+    19 |               headers: {}
+    20 |           },
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                                               ^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ')' expected (20:11)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (20:11)
+
+  18 |               method: 'GET',
+  19 |               headers: {}
+> 20 |           };
+     |            ^
+  21 |       setPartners(response.Items as Partner[]);
+  22 |       } catch (error) {
+  23 |         console.error('Error fetching partners:', error);
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseAwait (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11794:28)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10520:25)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 20:11:  Parsing error: ')' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:20:12
+TS1005: ')' expected.
+    18 |               method: 'GET',
+    19 |               headers: {}
+  > 20 |           };
+       |            ^
+    21 |       setPartners(response.Items as Partner[]);
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {}
+    20 |           };
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ',' expected (28:7)
+
+src/components/RegisterPartner.tsx
+Syntax error: Unexpected keyword or identifier (12:4)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Missing initializer in destructuring declaration. (28:7)
+
+  26 |
+  27 |     fetchPartners();
+> 28 |   }, []);
+     |        ^
+  29 |
+  30 |   return (
+  31 |     <div>
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12867:16)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13396:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9270:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13355:31)
+    at TypeScriptParserMixin.parseExport (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13282:29)
+    at TypeScriptParserMixin.parseExport (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9089:20)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12352:27)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseModuleItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12216:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:36)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseProgram (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12116:10)
+    at TypeScriptParserMixin.parseTopLevel (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12106:25)
+    at TypeScriptParserMixin.parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13905:10)
+    at TypeScriptParserMixin.parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9743:18)
+    at parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13947:38)
+    at parser (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transformation/index.js:21:50)
+    at run.next (<anonymous>)
+    at transform (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:261:32)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:223:11)
+
+ERROR in ./src/components/RegisterPartner.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/RegisterPartner.tsx: Missing semicolon. (12:6)
+
+  10 |   const handleRegister = async () => {
+  11 |     console.log('Register button clicked');
+> 12 |     co  nsole.log('Partner ID:', partnerId);
+     |       ^
+  13 |     console.log('Name:', name);
+  14 |     console.log('Description:', description);
+  15 |
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.semicolon (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3598:10)
+    at TypeScriptParserMixin.parseExpressionStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12765:10)
+    at TypeScriptParserMixin.parseExpressionStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9226:26)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12376:19)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10318:17)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12864:91)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11211:12)
+    at TypeScriptParserMixin.parseExprAtom (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10857:23)
+    at TypeScriptParserMixin.parseExprAtom (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:6821:20)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10590:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 28:7:  Parsing error: ',' expected
+
+src/components/RegisterPartner.tsx
+  Line 12:4:  Parsing error: Unexpected keyword or identifier
+
+webpack compiled with 3 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {},
+    20 |       });
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+ERROR in src/components/RegisterPartner.tsx:12:5
+TS1434: Unexpected keyword or identifier.
+    10 |   const handleRegister = async () => {
+    11 |     console.log('Register button clicked');
+  > 12 |     co  nsole.log('Partner ID:', partnerId);
+       |     ^^
+    13 |     console.log('Name:', name);
+    14 |     console.log('Description:', description);
+    15 |
+
+ERROR in src/components/RegisterPartner.tsx:12:5
+TS2304: Cannot find name 'co'.
+    10 |   const handleRegister = async () => {
+    11 |     console.log('Register button clicked');
+  > 12 |     co  nsole.log('Partner ID:', partnerId);
+       |     ^^
+    13 |     console.log('Name:', name);
+    14 |     console.log('Description:', description);
+    15 |
+
+ERROR in src/components/RegisterPartner.tsx:12:9
+TS2552: Cannot find name 'nsole'. Did you mean 'console'?
+    10 |   const handleRegister = async () => {
+    11 |     console.log('Register button clicked');
+  > 12 |     co  nsole.log('Partner ID:', partnerId);
+       |         ^^^^^
+    13 |     console.log('Name:', name);
+    14 |     console.log('Description:', description);
+    15 |
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ',' expected (28:7)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Missing initializer in destructuring declaration. (28:7)
+
+  26 |
+  27 |     fetchPartners();
+> 28 |   }, []);
+     |        ^
+  29 |
+  30 |   return (
+  31 |     <div>
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.parseVar (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12867:16)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12710:10)
+    at TypeScriptParserMixin.parseVarStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9112:31)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12322:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13396:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9270:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13355:31)
+    at TypeScriptParserMixin.parseExport (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13282:29)
+    at TypeScriptParserMixin.parseExport (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9089:20)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12352:27)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseModuleItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12216:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:36)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseProgram (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12116:10)
+    at TypeScriptParserMixin.parseTopLevel (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12106:25)
+    at TypeScriptParserMixin.parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13905:10)
+    at TypeScriptParserMixin.parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9743:18)
+    at parse (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:13947:38)
+    at parser (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transformation/index.js:21:50)
+    at run.next (<anonymous>)
+    at transform (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:261:32)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/gensync/index.js:223:11)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 28:7:  Parsing error: ',' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx:11:14
+TS2322: Type '() => void' is not assignable to type 'FC<{}>'.
+  Type 'void' is not assignable to type 'ReactElement<any, any> | null'.
+     9 | }
+    10 |
+  > 11 | export const PartnersList: React.FC = () => {
+       |              ^^^^^^^^^^^^
+    12 |   const [partners, setPartners] = useState<Partner[]>([]);
+    13 |   const navigate = useNavigate();
+    14 |
+
+ERROR in src/components/Partners.tsx:21:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    19 |               headers: {},
+    20 |       });
+  > 21 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    22 |       } catch (error) {
+    23 |         console.error('Error fetching partners:', error);
+    24 |       }
+
+ERROR in src/components/Partners.tsx:28:8
+TS1005: ',' expected.
+    26 |
+    27 |     fetchPartners();
+  > 28 |   }, []);
+       |        ^
+    29 |
+    30 |   return (
+    31 |     <div>
+
+ERROR in src/components/Partners.tsx:46:1
+TS1128: Declaration or statement expected.
+    44 |     </div>
+    45 |   );
+  > 46 | };
+       | ^
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 37:14:  'Link' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 13:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 37:14:  'Link' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+ERROR in src/components/Partners.tsx:15:3
+TS2304: Cannot find name 'useEffect'.
+    13 |   const navigate = useNavigate();
+    14 |
+  > 15 |   useEffect(() => {
+       |   ^^^^^^^^^
+    16 |     const fetchPartners = async () => {
+    17 |       try {
+    18 |           const response = await fetch('/api/partners', {
+
+ERROR in src/components/Partners.tsx:22:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    20 |               headers: {},
+    21 |       });
+  > 22 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    23 |       } catch (error) {
+    24 |         console.error('Error fetching partners:', error);
+    25 |       }
+
+ERROR in src/components/Partners.tsx:37:14
+TS2304: Cannot find name 'Link'.
+    35 |         {partners.map((partner) => (
+    36 |           <li key={partner.id}>
+  > 37 |             <Link to={`/partner/${partner.id}`}>
+       |              ^^^^
+    38 |               <h2>{partner.name}</h2>
+    39 |               <p>{partner.description}</p>
+    40 |               <p>{partner.address}</p>
+
+ERROR in src/components/Partners.tsx:41:15
+TS2304: Cannot find name 'Link'.
+    39 |               <p>{partner.description}</p>
+    40 |               <p>{partner.address}</p>
+  > 41 |             </Link>
+       |               ^^^^
+    42 |           </li>
+    43 |         ))}
+    44 |       </ul>
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:17:3
+TS2304: Cannot find name 'useEffect'.
+    15 |   const navigate = useNavigate();
+    16 |
+  > 17 |   useEffect(() => {
+       |   ^^^^^^^^^
+    18 |     const fetchPartners = async () => {
+    19 |       try {
+    20 |           const response = await fetch('/api/partners', {
+
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'List' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.List as Partner[]);
+       |                            ^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:19
+TS2352: Conversion of type 'Response' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Response' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'Partner' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.Partner as Partner[]);
+       |                            ^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'key' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.key as Partner[]);
+       |                            ^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'map' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |       });
+  > 24 |       setPartners(response.map as Partner[]);
+       |                            ^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 14:10:  'partners' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 14:10:  'partners' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:37:10
+TS2552: Cannot find name 'response'. Did you mean 'Response'?
+    35 |       <h1>Partners List</h1>
+    36 |       <ul>
+  > 37 |         {response.map((partner) => (
+       |          ^^^^^^^^
+    38 |           <li key={partner.id}>
+    39 |             <Link to={`/partner/${partner.id}`}>
+    40 |               <h2>{partner.name}</h2>
+
+ERROR in src/components/Partners.tsx:37:24
+TS7006: Parameter 'partner' implicitly has an 'any' type.
+    35 |       <h1>Partners List</h1>
+    36 |       <ul>
+  > 37 |         {response.map((partner) => (
+       |                        ^^^^^^^
+    38 |           <li key={partner.id}>
+    39 |             <Link to={`/partner/${partner.id}`}>
+    40 |               <h2>{partner.name}</h2>
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 14:10:  'partners' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 14:10:  'partners' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:37:19
+TS2339: Property 'map' does not exist on type '{ new (body?: BodyInit | null | undefined, init?: ResponseInit | undefined): Response; prototype: Response; error(): Response; redirect(url: string | URL, status?: number | undefined): Response; }'.
+    35 |       <h1>Partners List</h1>
+    36 |       <ul>
+  > 37 |         {Response.map((partner) => (
+       |                   ^^^
+    38 |           <li key={partner.id}>
+    39 |             <Link to={`/partner/${partner.id}`}>
+    40 |               <h2>{partner.name}</h2>
+
+ERROR in src/components/Partners.tsx:37:24
+TS7006: Parameter 'partner' implicitly has an 'any' type.
+    35 |       <h1>Partners List</h1>
+    36 |       <ul>
+  > 37 |         {Response.map((partner) => (
+       |                        ^^^^^^^
+    38 |           <li key={partner.id}>
+    39 |             <Link to={`/partner/${partner.id}`}>
+    40 |               <h2>{partner.name}</h2>
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 14:20:  'setPartners' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:9:   'navigate' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  Line 20:17:  'response' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:28
+TS2339: Property 'Items' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response.Items as Partner[]);
+       |                            ^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/Partners.tsx
+Syntax error: ',' expected (24:31)
+ERROR in ./src/components/Partners.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/src/components/Partners.tsx: Unexpected token, expected "," (24:31)
+
+  22 |               headers: {},
+  23 |         });
+> 24 |       setPartners(response. as Partner[]);
+     |                                ^
+  25 |       } catch (error) {
+  26 |         console.error('Error fetching partners:', error);
+  27 |       }
+    at constructor (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:353:19)
+    at TypeScriptParserMixin.raise (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3277:19)
+    at TypeScriptParserMixin.unexpected (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3297:16)
+    at TypeScriptParserMixin.expect (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:3601:28)
+    at TypeScriptParserMixin.parseCallExpressionArguments (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10764:14)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10693:29)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10410:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10387:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10348:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9415:20)
+    at TypeScriptParserMixin.parseExpressionBase (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10302:23)
+    at /Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10298:39
+    at TypeScriptParserMixin.allowInAnd (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11931:16)
+    at TypeScriptParserMixin.parseExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10298:17)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12372:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseTryStatement (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12685:23)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12276:21)
+    at TypeScriptParserMixin.parseStatementContent (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9142:18)
+    at TypeScriptParserMixin.parseStatementLike (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12239:17)
+    at TypeScriptParserMixin.parseStatementListItem (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12219:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12796:61)
+    at TypeScriptParserMixin.parseBlockBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12789:10)
+    at TypeScriptParserMixin.parseBlock (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:12777:10)
+    at TypeScriptParserMixin.parseFunctionBody (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11616:24)
+    at TypeScriptParserMixin.parseArrowExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:11591:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10788:10)
+    at TypeScriptParserMixin.parseAsyncArrowFromCallExpression (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9395:18)
+    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10701:27)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10630:19)
+    at TypeScriptParserMixin.parseSubscript (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:8978:18)
+    at TypeScriptParserMixin.parseSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10603:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10594:17)
+    at TypeScriptParserMixin.parseUpdate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10573:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10551:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:9466:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/ab/Documents/work/grow/github/SmartBirds/apps/mini-app/node_modules/@babel/parser/lib/index.js:10405:61)
+
+ERROR in [eslint] 
+src/components/Partners.tsx
+  Line 24:31:  Parsing error: ',' expected
+
+webpack compiled with 2 errors
+ERROR in src/components/Partners.tsx
+TS1011: An element access expression should take an argument.
+
+ERROR in src/components/Partners.tsx:24:29
+TS2339: Property 'as' does not exist on type 'Response'.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response. as Partner[]);
+       |                             ^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+ERROR in src/components/Partners.tsx:24:32
+TS1005: ',' expected.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response. as Partner[]);
+       |                                ^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+ERROR in src/components/Partners.tsx:24:32
+TS2693: 'Partner' only refers to a type, but is being used as a value here.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response. as Partner[]);
+       |                                ^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+ERROR in src/components/Partners.tsx:24:32
+TS2554: Expected 1 arguments, but got 2.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response. as Partner[]);
+       |                                ^^^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:19
+TS2352: Conversion of type 'Response' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Response' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:24:19
+TS2345: Argument of type 'Response' is not assignable to parameter of type 'SetStateAction<Partner[]>'.
+    22 |               headers: {},
+    23 |         });
+  > 24 |       setPartners(response);
+       |                   ^^^^^^^^
+    25 |       } catch (error) {
+    26 |         console.error('Error fetching partners:', error);
+    27 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:25:19
+TS2345: Argument of type 'Response' is not assignable to parameter of type 'SetStateAction<Partner[]>'.
+    23 |         });
+    24 |       console.log(response)
+  > 25 |       setPartners(response);
+       |                   ^^^^^^^^
+    26 |       } catch (error) {
+    27 |         console.error('Error fetching partners:', error);
+    28 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:25:19
+TS2345: Argument of type 'Response' is not assignable to parameter of type 'SetStateAction<Partner[]>'.
+    23 |         });
+    24 |       console.log(response);
+  > 25 |       setPartners(response);
+       |                   ^^^^^^^^
+    26 |       } catch (error) {
+    27 |         console.error('Error fetching partners:', error);
+    28 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:25:19
+TS2345: Argument of type 'ReadableStream<Uint8Array> | null' is not assignable to parameter of type 'SetStateAction<Partner[]>'.
+  Type 'null' is not assignable to type 'SetStateAction<Partner[]>'.
+    23 |         });
+    24 |       console.log(response);
+  > 25 |       setPartners(response.body);
+       |                   ^^^^^^^^^^^^^
+    26 |       } catch (error) {
+    27 |         console.error('Error fetching partners:', error);
+    28 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:25:19
+TS2352: Conversion of type 'ReadableStream<Uint8Array> | null' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'ReadableStream<Uint8Array>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    23 |         });
+    24 |       console.log(response);
+  > 25 |       setPartners(response.body as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    26 |       } catch (error) {
+    27 |         console.error('Error fetching partners:', error);
+    28 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:   'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 25:13:  'temp' is assigned a value but never used      @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:   'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 25:13:  'temp' is assigned a value but never used      @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:26:19
+TS2352: Conversion of type 'ReadableStream<Uint8Array> | null' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'ReadableStream<Uint8Array>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    24 |       console.log(response);
+    25 |       const temp = await response.body
+  > 26 |       setPartners(response.body as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    27 |       } catch (error) {
+    28 |         console.error('Error fetching partners:', error);
+    29 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:   'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 25:13:  'temp' is assigned a value but never used      @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:   'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 25:13:  'temp' is assigned a value but never used      @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:26:19
+TS2352: Conversion of type 'ReadableStream<Uint8Array> | null' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'ReadableStream<Uint8Array>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    24 |       console.log(response);
+    25 |       const temp = await response.body;
+  > 26 |       setPartners(response.body as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    27 |       } catch (error) {
+    28 |         console.error('Error fetching partners:', error);
+    29 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:26:19
+TS2352: Conversion of type 'ReadableStream<Uint8Array> | null' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'ReadableStream<Uint8Array>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    24 |       const temp = await response.body;
+    25 |       console.log(temp);
+  > 26 |       setPartners(response.body as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    27 |       } catch (error) {
+    28 |         console.error('Error fetching partners:', error);
+    29 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:27:19
+TS2352: Conversion of type 'ReadableStream<Uint8Array> | null' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'ReadableStream<Uint8Array>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    25 |       console.log(temp);
+    26 |       console.log(response);
+  > 27 |       setPartners(response.body as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    28 |       } catch (error) {
+    29 |         console.error('Error fetching partners:', error);
+    30 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:27:19
+TS2352: Conversion of type 'Promise<any>' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Promise<any>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    25 |       console.log(temp);
+    26 |       console.log(response);
+  > 27 |       setPartners(response.json() as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    28 |       } catch (error) {
+    29 |         console.error('Error fetching partners:', error);
+    30 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/components/Partners.tsx:27:19
+TS2352: Conversion of type 'Promise<any>' to type 'Partner[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'Promise<any>' is missing the following properties from type 'Partner[]': length, pop, push, concat, and 29 more.
+    25 |       console.log(temp);
+    26 | //       console.log(response);
+  > 27 |       setPartners(response.json() as Partner[]);
+       |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    28 |       } catch (error) {
+    29 |         console.error('Error fetching partners:', error);
+    30 |       }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 15:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 3:10:  'Banner' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 3:18:  'Button' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 3:26:  'Image' is defined but never used              @typescript-eslint/no-unused-vars
+  Line 3:33:  'Section' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 17:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 3:10:  'Banner' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 3:18:  'Button' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 3:26:  'Image' is defined but never used              @typescript-eslint/no-unused-vars
+  Line 3:33:  'Section' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 17:9:  'navigate' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+Attempted import error: 'ConfigProvider' is not exported from '@xelene/tgui' (imported as 'ConfigProvider').
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/App.tsx 16:46-60
+export 'ConfigProvider' (imported as 'ConfigProvider') was not found in '@xelene/tgui' (possible exports: Accordion, AppRoot, Avatar, AvatarStack, Badge, Banner, Blockquote, Breadcrumbs, Button, Caption, Card, Cell, Checkbox, Chip, ColorInput, CompactPagination, Divider, FileInput, FixedLayout, Headline, IconButton, IconContainer, Image, Input, LargeTitle, Link, List, Modal, Multiselect, Multiselectable, Pagination, PinInput, Placeholder, Popper, Progress, Radio, Rating, RootRenderer, Section, SegmentedControl, Selectable, Skeleton, Slider, Snackbar, Spinner, Spoiler, Steps, Subheadline, Switch, Tabbar, TabsList, Tappable, Text, Textarea, Timeline, Title, Tooltip, Typography, VisuallyHidden)
+
+ERROR in ./src/App.tsx 17:33-51
+export 'AdaptivityProvider' (imported as 'AdaptivityProvider') was not found in '@xelene/tgui' (possible exports: Accordion, AppRoot, Avatar, AvatarStack, Badge, Banner, Blockquote, Breadcrumbs, Button, Caption, Card, Cell, Checkbox, Chip, ColorInput, CompactPagination, Divider, FileInput, FixedLayout, Headline, IconButton, IconContainer, Image, Input, LargeTitle, Link, List, Modal, Multiselect, Multiselectable, Pagination, PinInput, Placeholder, Popper, Progress, Radio, Rating, RootRenderer, Section, SegmentedControl, Selectable, Skeleton, Slider, Snackbar, Spinner, Spoiler, Steps, Subheadline, Switch, Tabbar, TabsList, Tappable, Text, Textarea, Timeline, Title, Tooltip, Typography, VisuallyHidden)
+
+webpack compiled with 2 errors and 1 warning
+ERROR in src/App.tsx:5:19
+TS2305: Module '"@xelene/tgui"' has no exported member 'AdaptivityProvider'.
+    3 | import React from 'react';
+    4 | import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+  > 5 | import { AppRoot, AdaptivityProvider, ConfigProvider } from '@xelene/tgui';
+      |                   ^^^^^^^^^^^^^^^^^^
+    6 | import { PartnersList } from './components/Partners';
+    7 | import { PartnerInfo } from './components/PartnerInfo';
+    8 | import { RegisterPartner } from './components/RegisterPartner';
+
+ERROR in src/App.tsx:5:39
+TS2305: Module '"@xelene/tgui"' has no exported member 'ConfigProvider'.
+    3 | import React from 'react';
+    4 | import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+  > 5 | import { AppRoot, AdaptivityProvider, ConfigProvider } from '@xelene/tgui';
+      |                                       ^^^^^^^^^^^^^^
+    6 | import { PartnersList } from './components/Partners';
+    7 | import { PartnerInfo } from './components/PartnerInfo';
+    8 | import { RegisterPartner } from './components/RegisterPartner';
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used                                        @typescript-eslint/no-unused-vars
+  Line 37:7:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used                                        @typescript-eslint/no-unused-vars
+  Line 37:7:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Partners.tsx
+  Line 2:10:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+
+> tgui-example@1.0.0 start
+> PORT=3001 react-scripts start
+
+(node:69625) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:69625) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view tgui-example in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://192.168.1.16:3001
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+
+> tgui-example@1.0.0 start
+> PORT=3001 react-scripts start
+
+(node:87154) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:87154) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view tgui-example in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://192.168.1.16:3001
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+
+> tgui-example@1.0.0 start
+> PORT=3001 react-scripts start
+
+(node:87769) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:87769) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view tgui-example in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://192.168.1.16:3001
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.

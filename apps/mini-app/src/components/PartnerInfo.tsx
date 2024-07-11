@@ -1,51 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import AWS from 'aws-sdk';
-import { config } from '../config';
+// apps/mini-app/src/components/PartnerInfo.tsx
 
-const dynamodb = new AWS.DynamoDB.DocumentClient({
-  region: config.region,
-  endpoint: config.endpoint,
-});
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Banner, Button, Image, Section } from '@xelene/tgui';
 
 interface Partner {
   id: string;
   name: string;
   description: string;
   address: string;
+  logoUrl: string;
+  website: string;
+  wifiPassword: string;
+  workingHours: string;
+  menu: string;
 }
 
 export const PartnerInfo: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get('id');
   const [partner, setPartner] = useState<Partner | null>(null);
 
   useEffect(() => {
-    const fetchPartner = async () => {
-      const params = {
-        TableName: 'partners',
-        Key: { id },
+    if (id) {
+      const fetchPartner = async () => {
+        try {
+          const response = await fetch(`/api/partners/${id}`, {
+            method: 'GET',
+            headers: {},
+          });
+          const data = await response.json();
+          setPartner(data as Partner);
+        } catch (error) {
+          console.error('Error fetching partner:', error);
+        }
       };
 
-      try {
-        const data = await dynamodb.get(params).promise();
-        setPartner(data.Item as Partner);
-      } catch (error) {
-        console.error('Error fetching partner:', error);
-      }
-    };
-
-    fetchPartner();
+      fetchPartner();
+    }
   }, [id]);
 
   if (!partner) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
 
   return (
-    <div>
-      <h1>{partner.name}</h1>
-      <p>{partner.description}</p>
-      <p>{partner.address}</p>
-    </div>
+    <>
+      <Section header="Partner Information">
+        <Banner
+          before={<Image size={96} src={partner.logoUrl} />}
+          header={partner.name}
+          subheader={partner.description}
+        >
+          <p>Address: {partner.address}</p>
+          <p>Website: <a href={partner.website} target="_blank" rel="noopener noreferrer">{partner.website}</a></p>
+          <p>Wi-Fi Password: {partner.wifiPassword}</p>
+          <p>Working Hours: {partner.workingHours}</p>
+          <p>Menu: {partner.menu}</p>
+          <Button
+            size="s"
+            Component="a"
+            href={`/generate-qr?partner=${partner.id}`}
+          >
+            Generate QR Code
+          </Button>
+        </Banner>
+      </Section>
+    </>
   );
 };

@@ -59,23 +59,32 @@ app.get('/api/partners', async (req, res) => {
     res.status(500).json({ error: 'Error getting partners', details: error.message });
   }
 });
-app.get('/partners', async (req, res) => {
+
+// Новый маршрут для получения информации о конкретном партнере по id
+app.get('/api/partners/:id', async (req, res) => {
+  const { id } = req.params;
   const params = {
     TableName: 'partners',
+    Key: {
+      id: id,
+    },
   };
 
-  console.log('Received request to get partners:', params);
+  console.log('Received request to get partner:', params);
 
   try {
-    const data = await dynamodb.scan(params).promise();
-    console.log('Successfully got partners:', data);
-    res.json(data.Items);
+    const data = await dynamodb.get(params).promise();
+    if (data.Item) {
+      console.log('Successfully got partner:', data.Item);
+      res.json(data.Item);
+    } else {
+      res.status(404).json({ error: 'Partner not found' });
+    }
   } catch (error) {
-    console.error('Error getting partners:', error);
-    res.status(500).json({ error: 'Error getting partners', details: error.message });
+    console.error('Error getting partner:', error);
+    res.status(500).json({ error: 'Error getting partner', details: error.message });
   }
 });
-
 
 // Маршрут для регистрации партнера
 app.post('/api/register', async (req, res) => {
@@ -100,31 +109,6 @@ app.post('/api/register', async (req, res) => {
     res.status(500).json({ error: 'Error registering partner', details: error.message });
   }
 });
-app.post('/register', async (req, res) => {
-  const { partnerId, name, description } = req.body;
-  const params = {
-    TableName: 'partners',
-    Item: {
-      id: partnerId,
-      name,
-      description,
-    },
-  };
-
-  console.log('Received request to register partner:', params);
-
-  try {
-    const data = await dynamodb.put(params).promise();
-    console.log('Successfully registered partner:', data);
-    res.status(201).json({ message: 'Partner registered successfully' });
-  } catch (error) {
-    console.error('Error registering partner:', error);
-    res.status(500).json({ error: 'Error registering partner', details: error.message });
-  }
-});
-
-
-//const qrcode = require('qrcode');
 
 // Маршрут для генерации QR-кода
 app.post('/api/generate-qr', async (req, res) => {

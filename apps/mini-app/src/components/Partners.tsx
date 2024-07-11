@@ -49,14 +49,14 @@ export const PartnersList: React.FC = () => {
               <Button
                 size="s"
                 Component="a"
-                href={`${PARTNER_LINK}?partner=${partner.id}`}
+                href={`${PARTNER_LINK}?id=${partner.id}`}
               >
                 Info
               </Button>
               <Button
                 size="s"
                 Component="a"
-                href={`${HOME_LINK}?partner=${partner.id}`}
+                href={`${HOME_LINK}?id=${partner.id}`}
               >
                 QR Code
               </Button>

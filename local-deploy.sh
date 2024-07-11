@@ -22,7 +22,7 @@ start_dynamodb() {
 create_dynamodb_tables() {
     if is_running "DynamoDBLocal"; then
         echo "Creating tables in DynamoDB Local..."
-        cd apps/backend || exit
+        cd apps/api || exit
         node createTable.js
         cd -
         echo "Tables created in DynamoDB Local."
