@@ -3,40 +3,36 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import QRCode from 'qrcode.react';
-import { Section, List, Card } from '@telegram-apps/telegram-ui';
-import { CardCell } from '@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardCell/CardCell';
-import { CardChip } from '@telegram-apps/telegram-ui/dist/components/Blocks/Card/components/CardChip/CardChip';
+import { Section, List, Cell, Text, Modal, Banner, Button } from '@telegram-apps/telegram-ui';
+import { Icon32ProfileColoredSquare } from '@telegram-apps/telegram-ui/dist/cjs/icons/32/profile_colored_square';
+import { Icon24QR } from '@telegram-apps/telegram-ui/dist/cjs/icons/24/qr';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faClock, faWifi, faGlobe, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 async function fetchPartnerDetails(partnerId) {
-  // const response = await fetch(`/api/partners/${partnerId}`); // Замените на ваш реальный API-эндпоинт
-  // if (!response.ok) {
-  //   throw new Error('Failed to fetch partner details');
-  // }
-  // return await response.json();
-
   const partnerDetails = {
-    "id": "1",
-    "title": "Smart Birds Coworking",
-    "subtitle": "The Coworking in Kusadasi",
-    "description": "In our coworking space there is everything for effective work: a high-speed internet, comfy office furniture, and nice atmosphere",
-    // "logo_src": "https://static.tildacdn.one/tild6361-3139-4330-b064-393537376230/SB-Brandmark-Black_2.png",
-    "logo_src": "https://steemitimages.com/1280x0/https://steemitimages.com/DQmQCN7XP4wVAtEELRzWCYXYYxPZhfjcrNQ2z3UAJMq8Vsc/kusadas%C4%B1-05.png",
-    "discount": "10%",
-    "address": "123 Main St, Kusadasi",
-    "working_hours": "Mon-Fri: 9am - 7pm",
-    "wifi_info": "SSID: SmartBirds, Password: smart1234"
+    id: "1",
+    title: "Smart Birds Coworking",
+    subtitle: "The Coworking in Kusadasi",
+    description: "In our coworking space there is everything for effective work: a high-speed internet, comfy office furniture, and nice atmosphere",
+    logo_src: "https://static.tildacdn.one/tild6361-3139-4330-b064-393537376230/SB-Brandmark-Black_2.png",
+    address: "Smart Birds Coworking, Türkmen, ASO PARK RESIDANCE, Ant Sk. No: 28 D:2A, 09400 Kuşadası/Aydın, Türkiye",
+    working_hours: "Mon-Fri: 9am - 7pm",
+    wifi_info: "Name: SmartBirds, Password: smart1234",
   };
   return partnerDetails;
 }
 
 export default function PartnerDetails({ params }: { params: { id: string } }) {
   const { id } = params;
+  const router = useRouter();
   const [partner, setPartner] = useState(null);
   const [showQRCode, setShowQRCode] = useState(false);
+  const [copySuccess, setCopySuccess] = useState('');
 
   useEffect(() => {
     if (id) {
-      fetchPartnerDetails(id).then(data => setPartner(data)).catch(error => console.error(error));
+      fetchPartnerDetails(id).then(setPartner).catch(console.error);
     }
   }, [id]);
 
@@ -48,42 +44,116 @@ export default function PartnerDetails({ params }: { params: { id: string } }) {
     setShowQRCode(true);
   };
 
+  const handleCopyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(partner.address);
+      setCopySuccess('Address copied!');
+      setTimeout(() => setCopySuccess(''), 2000); // Уведомление исчезает через 2 секунды
+    } catch (err) {
+      setCopySuccess('Failed to copy');
+    }
+  };
+
   return (
     <div style={styles.appContainer}>
+      <Button
+        mode="plain"
+        size="s"
+        onClick={() => router.back()}
+        style={styles.backButton}
+      >
+        ⟵
+      </Button>
+
       <List>
-        <Section
-          header={partner.title}
-          footer={partner.subtitle}
-        >
-          <Card style={styles.card}>
-            <img
-              alt={partner.title}
-              src={partner.logo_src}
-              style={styles.image}
+        <Section header={partner.title}>
+          <Cell>
+            <img alt={partner.title} src={partner.logo_src} style={styles.image} />
+          </Cell>
+        </Section>
+        <Section>
+          <Modal
+            trigger={
+              <Button
+                style={styles.button}
+                onClick={handleGenerateQRCode}
+                mode="filled"
+                size="l"
+                stretched
+                before={<Icon24QR />}
+              >
+                Get Discount
+              </Button>
+            }
+          >
+            {showQRCode && (
+              <div style={styles.qrCodeContainer}>
+                <QRCode
+                  value={`https://example.com/partners/${id}`}
+                  size={256}
+                  style={{ display: 'block', margin: '0 auto' }}
+                />
+                <Text style={{ textAlign: 'center', margin: '20px' }}>
+                  Show this QR code to the cashier to get a discount
+                </Text>
+              </div>
+            )}
+          </Modal>
+        </Section>
+
+        <Section>
+          <Cell before={<Icon32ProfileColoredSquare />} multiline>
+            {partner.description}
+          </Cell>
+
+          <Banner
+            before={<FontAwesomeIcon icon={faMapMarkerAlt} size="2x" />}
+            header="Address"
+            subheader={
+              <div style={styles.addressContainer}>
+                <span style={{ cursor: 'pointer' }}>{partner.address}</span>
+                <FontAwesomeIcon
+                  icon={faCopy}
+                  size="1x"
+                  style={styles.copyIcon}
+                  onClick={handleCopyAddress}
+                />
+                {copySuccess && <Text style={styles.copySuccess}>{copySuccess}</Text>}
+              </div>
+            }
+            style={styles.banner}
+          >
+            <Button
+              mode="secondary"
+              size="s"
+              onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(partner.address)}`, '_blank')}
+            >
+              Open in Maps
+            </Button>
+          </Banner>
+
+          <Banner
+            before={<FontAwesomeIcon icon={faClock} size="2x" />}
+            header="Working Hours"
+            subheader={partner.working_hours}
+            style={styles.banner}
+          />
+
+          <Banner
+            before={<FontAwesomeIcon icon={faWifi} size="2x" />}
+            header="Wi-Fi Info"
+            subheader={partner.wifi_info}
+            style={styles.banner}
+          />
+
+          {partner.website && (
+            <Banner
+              before={<FontAwesomeIcon icon={faGlobe} size="2x" />}
+              header="Website"
+              subheader={partner.website}
+              style={styles.banner}
             />
-            <div style={styles.content}>
-              <p>{partner.description}</p>
-              <p><strong>Address:</strong> {partner.address}</p>
-              {partner.website && partner.website !== '' && (
-                <p>Website: <a href={partner.website} target="_blank" rel="noopener noreferrer">{partner.website}</a></p>
-              )}
-              <p><strong>Working Hours:</strong> {partner.working_hours}</p>
-              <p><strong>Wi-Fi Info:</strong> {partner.wifi_info}</p>
-              {partner.discount && partner.discount !== '0' && (
-                <CardChip readOnly style={styles.cardChip}>
-                  Discount: {partner.discount}
-                </CardChip>
-              )}
-              <button style={styles.button} onClick={handleGenerateQRCode}>
-                Generate QR Code
-              </button>
-              {showQRCode && (
-                <div style={styles.qrCodeContainer}>
-                  <QRCode value={`https://example.com/partners/${id}`} />
-                </div>
-              )}
-            </div>
-          </Card>
+          )}
         </Section>
       </List>
     </div>
@@ -96,30 +166,34 @@ const styles = {
     margin: '0 auto',
     padding: '10px',
   },
-  card: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '20px',
+  backButton: {
+    marginBottom: '20px',
+    cursor: 'pointer',
   },
   image: {
     width: '100%',
     objectFit: 'cover',
   },
-  content: {
-    marginTop: '20px',
-    textAlign: 'left',
-  },
-  cardChip: {
-    marginTop: '10px',
-  },
   button: {
-    marginTop: '20px',
-    padding: '10px 20px',
     fontSize: '16px',
     cursor: 'pointer',
   },
   qrCodeContainer: {
     marginTop: '20px',
+  },
+  banner: {
+    padding: '20px 28px',
+  },
+  addressContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  copyIcon: {
+    marginLeft: '10px',
+    cursor: 'pointer',
+  },
+  copySuccess: {
+    marginLeft: '10px',
+    color: 'green',
   },
 };
